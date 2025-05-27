@@ -1,0 +1,59 @@
+*{
+    font-family: sans-serif;
+}
+
+.navbar {
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+    padding: 20px 15%;
+    flex-wrap: wrap;
+}
+
+.navbar-itens {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar-span-itens {
+    color: #3d394f;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.navbar-title {
+    margin: 0;
+}
+
+.title {
+    font-size: 26px;
+    color:#5a5785;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navbar-itens {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+.hire-us {
+    background-color: #6a5acd;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor:pointer;
+    box-shadow: 0 0 0 3px #ff69b4;
+    transition: all 0.3s ease;
+
+}
