@@ -1,13 +1,23 @@
-<div class="navbar">
-    <div class="navbar-title">
-        <h5 class="title">Appux</h5>
-    </div>
-    <div class="navbar-itens">
-        <span class="navbar-span-itens">Home</span>
-        <span class="navbar-span-itens">Case Studies</span>
-        <span class="navbar-span-itens">Portfolios</span>
-        <span class="navbar-span-itens">Blog</span>
-        <span class="navbar-span-itens">Resource</span>
-        <span class="navbar-span-itens hire-us">Hire Us</span>
-    </div>
-</div>
+<nav class="navbar-container">
+  
+  <div class="navbar-logo">
+    <h5>Appux</h5>
+  </div>
+
+  <div class="navbar-links" [class.active]="isMenuOpen">
+    <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-item">Home</a>
+    <a routerLink="/case-studies" routerLinkActive="active-link" class="nav-item">Case Studies</a>
+    <a routerLink="/portfolios" routerLinkActive="active-link" class="nav-item">Portfolios</a>
+    <a routerLink="/resource" routerLinkActive="active-link" class="nav-item">Resource</a>
+    <a href="#" class="nav-item hire-us">Hire Us</a>
+  </div>
+
+  <button class="hamburger-menu" (click)="toggleMenu()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+
+</nav>

@@ -1,59 +1,83 @@
-*{
-    font-family: sans-serif;
+$primary-purple: #6a45e4;
+$dark-text: #333;
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;        
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.navbar {
-    align-items: center;
-    display:flex;
-    justify-content: space-between;
-    padding: 20px 15%;
-    flex-wrap: wrap;
+.navbar-logo h5 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $primary-purple;
 }
 
-.navbar-itens {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
-.navbar-span-itens {
-    color: #3d394f;
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-}
+.nav-item {
+  color: $dark-text;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
 
-.navbar-title {
-    margin: 0;
-}
-
-.title {
-    font-size: 26px;
-    color:#5a5785;
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .navbar-itens {
-    flex-wrap: wrap;
-    gap: 10px;
+  &:hover {
+    color: $primary-purple;
   }
 }
 
 .hire-us {
-    background-color: #6a5acd;
-    color: white;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor:pointer;
-    box-shadow: 0 0 0 3px #ff69b4;
-    transition: all 0.3s ease;
+  background-color: $primary-purple;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 
+  &:hover {
+    color: #fff;
+    background-color: darken($primary-purple, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $dark-text;
+}
+
+.active-link {
+  color: #6a45e4;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    gap: 1.5rem;
+  }
 }

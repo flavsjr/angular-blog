@@ -1,0 +1,114 @@
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  .header-text h1 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    color: #2c2c2c;
+  }
+
+  .header-illustration img {
+    max-width: 360px;
+  }
+}
+
+.all-posts-section {
+  margin-top: 4rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 2rem;
+    color: #2c2c2c;
+  }
+
+  .filters {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    span {
+      padding: 0.6rem 1.2rem;
+      background-color: #f0f0f0;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color:black;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: #e0e0e0;
+        color: black;
+      }
+      
+      &.active {
+        background-color: #6a45e4;
+        color: #fff;
+      }
+    }
+
+    input[type="search"] {
+      padding: 0.6rem 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+      width: 250px;
+
+      &:focus {
+        border-color: #6a45e4;
+      }
+    }
+  }
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+
+// --- RESPONSIVIDADE ---
+@media (max-width: 992px) {
+  .post-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header .header-text h1 {
+    font-size: 2rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

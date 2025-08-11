@@ -1,0 +1,39 @@
+<div class="page-container">
+
+  <header class="page-header">
+    <div class="header-text">
+      <h1>All you wanted to know about working with designers and creating delightful product experiences</h1>
+    </div>
+    <div class="header-illustration">
+      <img src="assets/images/design.png" alt="Working with designers">
+    </div>
+  </header>
+
+  <app-big-main-card *ngIf="featuredPost" [data]="featuredPost"></app-big-main-card>
+
+  <section class="all-posts-section">
+    <div class="section-header">
+      <h2>All Post</h2>
+      <div class="filters">
+        <span (click)="setFilter('All')" [class.active]="activeCategory === 'All'">All</span>
+        <span (click)="setFilter('UI DESIGN')" [class.active]="activeCategory === 'UI DESIGN'">UI Design</span>
+        <span (click)="setFilter('DESIGN PROCESS')" [class.active]="activeCategory === 'DESIGN PROCESS'">Design Process</span>
+        
+        <input 
+          type="search" 
+          placeholder="Search what you want"
+          [(ngModel)]="searchTerm"
+          (input)="onSearch()">
+      </div>
+    </div>
+
+    <div class="post-grid" [@listAnimation]="filteredPosts.length">
+      <app-small-card *ngFor="let post of filteredPosts" [postData]="post"></app-small-card>
+    </div>
+
+    <div *ngIf="filteredPosts.length === 0" class="no-results">
+      <h3>No posts found.</h3>
+      <p>Try adjusting your filters or search terms.</p>
+    </div>
+  </section>
+</div>

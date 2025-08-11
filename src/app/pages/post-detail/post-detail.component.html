@@ -1,0 +1,50 @@
+<div *ngIf="post; else notFound">
+
+    <article class="post-detail-container">
+
+        <main class="post-body-wrapper">
+            <button (click)="goBack()" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-arrow-left">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back
+            </button>
+
+            <span class="category-tag">{{ post.category }}</span>
+            <h1>{{ post.title }}</h1>
+
+            <img class="hero-image" [src]="post.imageUrl" [alt]="post.title">
+
+            <div class="post-metadata">
+                <div class="author-info">
+                    <img class="author-avatar" [src]="post.authorAvatarUrl" alt="{{ post.author }}">
+                    <span>{{ post.author }}</span>
+                </div>
+                <time [attr.datetime]="post.publishDate">{{ post.publishDate | date: 'd MMMM, y' }}</time>
+            </div>
+
+            <div class="article-content" [innerHTML]="post.content"></div>
+        </main>
+    </article>
+
+</div>
+
+<ng-template #notFound>
+    <div class="post-not-found">
+        <button (click)="goBack()" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-arrow-left">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back
+        </button>
+        <h2>Post not found.</h2>
+        <p>The post you are looking for does not exist or has been moved.</p>
+        <a routerLink="/">Return to home page</a>
+    </div>
+</ng-template>

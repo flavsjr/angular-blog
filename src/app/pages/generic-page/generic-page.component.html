@@ -1,0 +1,15 @@
+<div class="page-container">
+  <header class="page-header">
+    <h1>{{ pageTitle }}</h1>
+    <p>{{ pageDescription }}</p>
+  </header>
+
+  <div class="generic-grid" *ngIf="pageItems.length > 0">
+    <div class="generic-card" *ngFor="let item of pageItems">
+      <img [src]="item.imageUrl" [alt]="item.title">
+      <div class="card-content">
+        <h4>{{ item.title }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

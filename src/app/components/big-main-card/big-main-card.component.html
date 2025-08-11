@@ -1,1 +1,14 @@
-<p>big-main-card works!</p>
+<a [routerLink]="['/post', data.id]" class="card-link" *ngIf="data">
+
+  <div class="featured-card-container" *ngIf="data">
+    <div class="card-image-wrapper">
+      <img [src]="data.imageUrl" [alt]="data.title">
+    </div>
+
+    <div class="card-content-wrapper">
+      <span class="category-tag">{{ data.category }}</span>
+      <h3 class="card-title">{{ data.title }}</h3>
+      <p class="card-description">{{ data.summary }}</p>
+    </div>
+  </div>
+</a>

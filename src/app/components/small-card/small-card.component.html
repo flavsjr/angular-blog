@@ -1,1 +1,12 @@
-<p>small-card works!</p>
+<a [routerLink]="['/post', postData.id]" class="card-link" *ngIf="postData">
+
+  <div class="card-container">
+    <img class="card-image" [src]="postData.imageUrl" [alt]="postData.title">
+
+    <div class="card-content">
+      <span class="card-category">{{ postData.category }}</span>
+      <h4 class="card-title">{{ postData.title }}</h4>
+    </div>
+  </div>
+
+</a>
